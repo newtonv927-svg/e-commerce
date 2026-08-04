@@ -1,4 +1,3 @@
-import 'package:e_commerce/pages/Favourites.dart';
 import 'package:e_commerce/pages/cart.dart';
 import 'package:e_commerce/pages/profile.dart';
 import 'package:flutter/material.dart';
@@ -7,26 +6,41 @@ void main() {
   runApp(MainScreen());
 }
 
-// class MyApp extends StatefulWidget {
-//   const MyApp({super.key});
+ class MyApp extends StatefulWidget {
+   const MyApp({super.key});
 
-//   @override
-//   State<MyApp> createState() => _MyAppState();
-// }
+   @override
+   State<MyApp> createState() => _MyAppState();
+ }
 
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "E-Commerce App",
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: HomePage(),
-//     );
-//   }
-//}
+ class _MyAppState extends State<MyApp> {
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+       debugShowCheckedModeBanner: false,
+       title: "E-Commerce App",
+       theme: ThemeData(
+         primarySwatch: Colors.blue,
+      ),
+       home: HomePage(),
+
+     );
+   }
+}
+
+class FavouritesPage extends StatelessWidget {
+  const FavouritesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('Favourites'),
+      ),
+    );
+  }
+}
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -35,7 +49,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-    var pages = [HomePage(), Favourites(), Cart(), Profile()];
+    final pages = [HomePage(), FavouritesPage(), CartPage(), ProfilePage()];
   int index = 0;
 
   @override
